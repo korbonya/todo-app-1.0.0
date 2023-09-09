@@ -1,8 +1,11 @@
-# React + Vite
+Devoir pour Mardi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+creer un nouveau projet et intaller tailwind react router 
 
-Currently, two official plugins are available:
+crear un route pour une page login  qui renvoi 	a un dashboard
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+et au niveau du dashboard vous devez avoir au moin trois liens
+
+statistique, utilisateur et parametres
+
+intégre une api
