@@ -77,7 +77,7 @@ export default function Todo() {
                 }} className="bg-yellow-300 hover:bg-yellow-500/50 px-2 py-1 rounded-md shadow">
                   modifier
                 </button>
-                <button onClick={handleDelete} className="bg-red-300 hover:bg-red-500 hover:text-white px-2 py-1 rounded-md shadow">
+                <button onClick={() => handleDelete(index)} className="bg-red-300 hover:bg-red-500 hover:text-white px-2 py-1 rounded-md shadow">
                   Supprimer
                 </button>
               </div>
