@@ -1,33 +1,24 @@
 import { useState, useEffect } from "react";
 
 import { useParams } from "react-router-dom";
+import { useFetch } from "./useFetch";
 
 export default function Detail() {
-    const [post, setPost] = useState({});
-    const [user, setUser] = useState({});
     const { id } = useParams();
+    const {data:post, loading:loadPost, error} = useFetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+    const {data:user, loading:loadUser, } = useFetch(`https://jsonplaceholder.typicode.com/users/${post?.userId}`);
     // date of the day
     const date = new Date().toLocaleDateString();
 
-    useEffect(() => {
-        async function fectchPost() {
-            const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
-            const data = await res.json();
-            setPost(data);
-        }
-        fectchPost();
+    if(loadPost || loadUser) return (
+        <div className='text-center text-xl font-bold py-4'>
+            <p>Chargement des données...</p>
+        </div>
+    )
 
-    }, [id]);
 
-    useEffect(() => {
-        async function fectchUser() {
-            const res = await fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`);
-            const data = await res.json();
-            setUser(data);
-        }
-        fectchUser();
 
-    }, [post.userId]);
+   
 
   return (
       <div className="bg-blue-50">
